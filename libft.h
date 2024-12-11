@@ -29,6 +29,7 @@ void	*ft_calloc(size_t nelem, size_t elsize);
 char	*ft_strdup(const char *str);
 char	*ft_substr(const char *s, unsigned int start, size_t len);
 char	*ft_strjoin(const char *s1, const char *s2);
+char	*ft_itoa(int n);
 
 void	ft_putchar_fd(char c, int fd);
 void	ft_putnbr_fd(int nb, int fd);
@@ -36,4 +37,4 @@ void	ft_putstr_fd(char *str, int fd);
 void	ft_putendl_fd(char *s, int fd);
 
 #endif
-// missing: P2 - all except for putnbr, putchar, putstr
+// missing: P2 - strtrim, split, strmapi, striteri

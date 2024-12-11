@@ -20,7 +20,6 @@ all: ${NAME}
 ${NAME}: {OBJFILES}
 	${LIBCR} ${NAME} ${OBJFILES}
 
-.PHONY: all clean fclean
 clean:
 	${RM} *.o
 
@@ -28,3 +27,4 @@ fclean: clean
 	${RM} ${NAME}
 
 re: all fclean
+.PHONY: all clean fclean

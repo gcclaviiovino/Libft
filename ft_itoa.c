@@ -1,17 +1,9 @@
 #include "libft.h"
+//#include <stdio.h>
 
-static int	digit(int nb)
+static int	size(long long int nb)
 {
-	while (nb > 9)
-	{
-		nb = nb / 10;
-	}
-	return (nb);
-}
-
-static int	size(int nb)
-{
-	int	count;
+	int			count;
 
 	count = 0;
 	if (nb == 0)
@@ -31,40 +23,37 @@ static int	size(int nb)
 
 char	*ft_itoa(int n)
 {
-	int		unit;
-	int		i;
 	int		len;
 	char	*str;
+	long int	n_l;
 
-	i = 0;
-	len = size(n);
-	str = (char *) malloc(sizeof(char) * len + 1);
-	if (n < 0)
+	n_l = n;
+	len = size(n_l);
+	str = (char *) malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (NULL);
+	if (n_l == 0)
+		str[len - 1] = '0';
+	if (n_l < 0)
 	{
-		str[i] = '-';
-		n = -n;
-		i ++;
+		str[0] = '-';
+		n_l = -n_l;
 	}
-	while (n > 0)
+	str[len] = '\0';
+	len --;
+	while (n_l > 0)
 	{
-		unit = digit(n);
-		str[i] = unit + '0';
-		i ++;
-		n = n % 10;
+		str[len] = (n_l % 10) + '0';
+		n_l = n_l / 10;
+		len --;
 	}
-	str[i] = '\0';
 	return (str);
 }
 /*
 int	main(void)
 {
 	char	*str;
-	int		i = 0;
 
-	str = ft_itoa(4352);
-	while (str[i] != '\0')
-	{
-		write(1, &str[i], 1);
-		i ++;
-	}
+	str = ft_itoa(-2147483648);
+	printf("%s", str);
 }*/
