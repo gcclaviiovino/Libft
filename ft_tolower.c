@@ -1,3 +1,5 @@
+#include "libft.h"
+
 int	ft_tolower(int lett)
 {
 	if (lett >= 'A' && lett <= 'Z')

@@ -1,3 +1,5 @@
+#include "libft.h"
+
 void	ft_putstr_fd(char *str, fd)
 {
 	int	i;

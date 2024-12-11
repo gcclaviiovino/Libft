@@ -1,3 +1,5 @@
+#include "libft.h"
+
 char	static *ft_strcpy(char *dest, const char *src) // mancano i controlli
 {
 	int	i;

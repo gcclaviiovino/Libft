@@ -1,4 +1,6 @@
-void	ft_bzero(void *add, unsigned int n) // prob da sostituire con size_t (ma prima studialo)
+#include "libft.h"
+
+void	ft_bzero(void *add, size_t n)
 {
 	unsigned int	i;
 	char			*str;
