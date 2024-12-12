@@ -6,11 +6,11 @@
 /*   By: liovino <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 14:40:56 by liovino           #+#    #+#             */
-/*   Updated: 2024/12/12 14:41:00 by liovino          ###   ########.fr       */
+/*   Updated: 2024/12/12 14:51:08 by liovino          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
+#include "libft.h"
 
 void	*ft_memchr(const void *str, int c, size_t n) // mancano i controlli
 {
