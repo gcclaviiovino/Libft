@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: liovino <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/12 14:43:10 by liovino           #+#    #+#             */
+/*   Updated: 2024/12/12 14:43:11 by liovino          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-char	static *ft_strcpy(char *dest, const char *src) // mancano i controlli
+static char	*ft_strcpy(char *dest, const char *src) // mancano i controlli
 {
 	int	i;
 
@@ -26,5 +38,5 @@ char	*ft_strdup(const char *str) // mancano i controlli
 	len = ft_strlen(str);
 	dest = (char *) malloc(sizeof(char) * (len + 1));
 	ft_strcpy(dest, str);
-	return (dest); // ha senso?
+	return (dest);
 }

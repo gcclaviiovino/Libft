@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: liovino <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/12 14:40:17 by liovino           #+#    #+#             */
+/*   Updated: 2024/12/12 14:40:19 by liovino          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 //#include <stdio.h>
 
 static int	size(long long int nb)
 {
-	int			count;
+	int	count;
 
 	count = 0;
 	if (nb == 0)
@@ -23,8 +35,8 @@ static int	size(long long int nb)
 
 char	*ft_itoa(int n)
 {
-	int		len;
-	char	*str;
+	int			len;
+	char		*str;
 	long int	n_l;
 
 	n_l = n;
