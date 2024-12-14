@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: liovino <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/14 15:17:06 by liovino           #+#    #+#             */
+/*   Updated: 2024/12/14 15:17:12 by liovino          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include <stdio.h>
 
@@ -27,6 +39,7 @@ static char	*trim_cpy(char *dest, const char *src, int start, int end)
 	printf("string: %s\n", dest);
 	return (dest);
 }
+
 char	*ft_strtrim(const char *s1, const char *set)
 {
 	char	*s_trim;

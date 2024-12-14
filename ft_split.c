@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: liovino <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/14 15:17:33 by liovino           #+#    #+#             */
+/*   Updated: 2024/12/14 15:17:35 by liovino          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include <stdio.h>
 
@@ -23,6 +35,7 @@ static int	w_count(const char *str, char c)
 	}
 	return (count);
 }
+
 static int	sub_len(const char *str, char c)
 {
 	int	len;
@@ -34,6 +47,7 @@ static int	sub_len(const char *str, char c)
 	}
 	return (len);
 }
+
 static char	*fill(const char *src, char c, int i, int len)
 {
 	char	*dest;
@@ -52,7 +66,7 @@ static char	*fill(const char *src, char c, int i, int len)
 			i_sub ++;
 		}
 	}
-	dest[i_sub] ='\0';
+	dest[i_sub] = '\0';
 	return (dest);
 }
 
@@ -84,6 +98,7 @@ char	**ft_split(const char *s, char c)
 	superstr[row] = NULL;
 	return (superstr);
 }
+
 int	main(void)
 {
 	char	*str = "bella raga come va";
