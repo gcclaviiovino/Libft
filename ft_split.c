@@ -34,7 +34,7 @@ static int	sub_len(const char *str, char c)
 	}
 	return (len);
 }
-static char	*fill(const char *src, char c, int i, int len)
+static char	*fill(const char *src, int i, int len)
 {
 	char	*dest;
 	int		i_sub;
@@ -43,14 +43,11 @@ static char	*fill(const char *src, char c, int i, int len)
 	dest = (char *) malloc(sizeof(char) * (len + 1));
 	if (!dest)
 		return (NULL);
-	while (i < len)
+	while (i_sub < len)
 	{
-		while (src[i] != c)
-		{
-			dest[i_sub] = src[i];
-			i ++;
-			i_sub ++;
-		}
+		dest[i_sub] = src[i];
+		i ++;
+		i_sub ++;
 	}
 	dest[i_sub] ='\0';
 	return (dest);
@@ -73,7 +70,7 @@ char	**ft_split(const char *s, char c)
 		len = sub_len(&s[i], c);
 		if (s[i] != c)
 		{
-			superstr[row] = fill(s, c, i, len);
+			superstr[row] = fill(s, i, len);
 			i ++;
 			s += len;
 		}
