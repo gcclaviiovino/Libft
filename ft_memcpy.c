@@ -6,7 +6,7 @@
 /*   By: liovino <liovino@student.42.it>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 15:27:57 by liovino           #+#    #+#             */
-/*   Updated: 2024/12/15 15:27:58 by liovino          ###   ########.fr       */
+/*   Updated: 2024/12/15 16:07:10 by liovino          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_memcpy(void *dest, const void *src, size_t n)
 
 	i = 0;
 	if (!dest || !src)
-		return (NULL);
+		return ;
 	ds = (unsigned char *)dest;
 	sr = (unsigned char *)src;
 	if (dest != src)
