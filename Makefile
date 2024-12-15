@@ -16,20 +16,22 @@ LIBCR = ar rcs
 RM = rm -f
 
 %.o: %.c
-	gcc -c $< -o $@
+	@echo "Compiling $<"
+	$(CC) $(CFLAGS) -c $< -o $@
 
 all: ${NAME}
 
-${NAME}: $(OBJFILES);
-	${LIBCR} ${NAME} ${OBJFILES}
+$(NAME): ${OBJFILES}
+	$(LIBCR) $(NAME) $(OBJFILES)
 
 bonus: ${NAME} ${BOBJFILES}
-	${LIBCR} ${NAME} ${BOBJFILES}
+	$(LIBCR) $(NAME) $(BOBJFILES)
+
 clean:
-	${RM} *.o
+	$(RM) *.o
 
 fclean: clean
-	${RM} ${NAME} ${OBJFILES}
+	$(RM) $(NAME) $(OBJFILES)
 
 re: all fclean
 .PHONY: all clean fclean re bonus
