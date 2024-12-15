@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: liovino <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: liovino <liovino@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 14:51:38 by liovino           #+#    #+#             */
-/*   Updated: 2024/12/12 14:51:40 by liovino          ###   ########.fr       */
+/*   Updated: 2024/12/15 12:32:58 by liovino          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ char	*ft_strchr(const char *str, int c)
 	while (str[i] != '\0')
 	{
 		if (str[i] == (char)c)
-			return (&str[i]);
+			return ((char *)&str[i]);
 		i ++;
 	}
 	if (c == '\0')
-		return (&str[i]);
+		return ((char *)&str[i]);
 	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: liovino <liovino@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 15:17:33 by liovino           #+#    #+#             */
-/*   Updated: 2024/12/14 16:14:20 by liovino          ###   ########.fr       */
+/*   Updated: 2024/12/14 17:17:51 by liovino          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 static int	w_count(const char *str, char c)
 {
-	int	count;
-	int	in_w;
-	int	i;
+	int		count;
+	bool	in_w;
+	int		i;
 
 	count = 0;
 	in_w = 0;
@@ -61,7 +61,7 @@ static char	*fill(const char *src, int i, int len)
 		i ++;
 		i_sub ++;
 	}
-	dest[i_sub] ='\0';
+	dest[i_sub] = '\0';
 	return (dest);
 }
 
