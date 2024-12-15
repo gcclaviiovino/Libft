@@ -6,7 +6,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 
 	last_n = ft_lstlast(*lst);
 	last_n->next = new;
-//	printf("%p\n", new);
 }
 /*
 int	main(void) // main di merda.

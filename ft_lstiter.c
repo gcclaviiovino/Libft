@@ -21,6 +21,7 @@ void    print_list(t_list *lst) // solo per stampare DA LEVARE!!
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	t_list	*next_n;
+
 	if (!lst)
 		return ;
 	while (lst != NULL)

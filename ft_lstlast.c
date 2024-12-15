@@ -2,9 +2,9 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	t_list *last;
-	int	len;
-	int	i;
+	t_list	*last;
+	int		len;
+	int		i;
 
 	i = 0;
 	len = ft_lstsize(lst);

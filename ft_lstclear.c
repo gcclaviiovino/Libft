@@ -25,7 +25,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 
 	to_del = *lst;
 	if (!lst || !del)
-		return;
+		return ;
 	while (to_del != NULL)
 	{
 		next_n = to_del->next;
