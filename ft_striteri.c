@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: liovino <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: liovino <liovino@student.42.it>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 16:54:40 by liovino           #+#    #+#             */
-/*   Updated: 2024/12/12 16:55:12 by liovino          ###   ########.fr       */
+/*   Updated: 2024/12/15 15:29:26 by liovino          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
