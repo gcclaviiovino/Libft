@@ -33,25 +33,25 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (new_lst);
 }
-/*
-int	main(void)
-{
-	t_list *node1 = malloc(sizeof(t_list));
-	t_list *node2 = malloc(sizeof(t_list));
-	t_list *node3 = malloc(sizeof(t_list));
 
-	node1->content = strdup("First");
-	node1->next = node2;
+// int	main(void)
+// {
+// 	t_list *node1 = malloc(sizeof(t_list));
+// 	t_list *node2 = malloc(sizeof(t_list));
+// 	t_list *node3 = malloc(sizeof(t_list));
 
-	node2->content = strdup("Second");
-	node2->next = node3;
+// 	node1->content = strdup("lorem");
+// 	node1->next = node2;
 
-	node3->content = strdup("Third");
-	node3->next = NULL;
+// 	node2->content = strdup("ipsum");
+// 	node2->next = node3;
 
-	printf("Lista prima:\n");
-	print_list(node1);
-	ft_lstmap(node1, (void *)f, del);
-	printf("Lista dopo:\n");
-	print_list(node1);
-}*/
+// 	node3->content = strdup("dolor");
+// 	node3->next = NULL;
+
+// 	printf("Lista prima:\n");
+// 	print_list(node1);
+// 	ft_lstmap(node1, (void *)f, del);
+// 	printf("Lista dopo:\n");
+// 	print_list(node1);
+// }

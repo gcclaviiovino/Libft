@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+//#include <bsd/string.h>
 
 char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 {
@@ -18,19 +19,29 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 	size_t	i2;
 
 	i = 0;
-	i2 = 0;
-	while (str[i] != '\0')
+	if (*to_find == '\0')
+		return ((char *)str);
+	while (str[i] != '\0' && i < n)
 	{
+		i2 = 0;
 		if (str[i] == to_find[i2])
 		{
-			while ((str[i + i2] == to_find[i2]) && (i + i2) < n)
+			while ((str[i + i2] == to_find[i2]) && (i + i2) < n \
+					&& (str[i + i2] && to_find[i2]))
 			{
+				if (to_find[i2 + 1] == '\0')
+					return ((char *)&str[i]);
 				i2 ++;
 			}
 		}
-		if (to_find[i2] == '\0')
-			return ((char *)&str[i]);
 		i ++;
 	}
-	return (0);
+	return (NULL);
 }
+/*
+int	main(void)
+{
+	printf("mio: %s\n", ft_strnstr("", "ipsumm", 30));
+	printf("suo: %s\n", strnstr("", "ipsumm", 30));
+}
+*/
