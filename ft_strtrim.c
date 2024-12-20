@@ -35,7 +35,6 @@ static char	*trim_cpy(char *dest, const char *src, int start, int end)
 		start ++;
 	}
 	dest[i] = '\0';
-	printf("string: %s\n", dest);
 	return (dest);
 }
 
@@ -47,28 +46,27 @@ char	*ft_strtrim(const char *s1, const char *set)
 	int		size;
 
 	i_s = 0;
-	i_e = ft_strlen(s1);
+	i_e = ft_strlen(s1) - 1;
 	if (!s1 || !set)
 		return (NULL);
 	while (s1[i_s] != '\0' && in_set(s1[i_s], set) == 1)
 	{
 		i_s ++;
 	}
-	while (i_e > i_s && in_set(s1[i_e - 1], set) == 1)
+	while (i_e > i_s && in_set(s1[i_e], set) == 1)
 	{
 		i_e --;
 	}
 	size = i_e - i_s;
-	s_trim = (char *) malloc(sizeof(char) * (size + 1));
+	s_trim = (char *) malloc(sizeof(char) * (size + 2));
 	if (!s_trim)
 		return (NULL);
 	return (trim_cpy(s_trim, s1, i_s, i_e));
 }
-/*
-int	main(void)
-{
-	char	*str = " ciaolol";
-	char	*to_find = " ";
-	printf("la stringa prima: %s\n", str);
-	printf("la stringa dopo: %s\n", ft_strtrim(str, to_find));
-}*/
+// int	main(void)
+// {
+// 	char	*str = "lorem \n ipsum \t dolor \n sit \t amet";
+// 	char	*to_find = " ";
+// 	printf("la stringa prima: %s\n", str);
+// 	printf("la stringa dopo: %s\n", ft_strtrim(str, to_find));
+// }

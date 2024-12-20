@@ -11,7 +11,19 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
+// static void	free_str(char **matrix, int w_count)
+// {
+// 	int	i;
+
+// 	i = 0;
+// 	while (i < w_count)
+// 	{
+// 		free(matrix[i]);
+// 		i ++;
+// 	}
+// }
 static int	w_count(const char *str, char c)
 {
 	int		count;
@@ -94,16 +106,16 @@ char	**ft_split(const char *s, char c)
 	superstr[row] = NULL;
 	return (superstr);
 }
-/*
+
 int	main(void)
 {
-	char	*str = "bella raga come va";
+	// char	*str = "bella raga come va";
 	char	**split;
-	char	c = ' ';
+	// char	c = ' ';
 
-	split = ft_split(str, c);
+	split = ft_split("          ", ' ');
 	printf("%s\n", split[0]);
 	printf("%s\n", split[1]);
 	printf("%s\n", split[2]);
 	printf("%s\n", split[3]);
-}*/
+}

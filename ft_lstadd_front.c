@@ -14,10 +14,8 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	printf("%p\n", lst);
 	new->next = *lst;
-	lst = &new;
-	printf("%p\n", lst);
+	*lst = new;
 }
 /*
 int	main(void)

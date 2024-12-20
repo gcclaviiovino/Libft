@@ -16,8 +16,13 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*last_n;
 
-	last_n = ft_lstlast(*lst);
-	last_n->next = new;
+	if (*lst == NULL)
+		*lst = new;
+	else
+	{
+		last_n = ft_lstlast(*lst);
+		last_n->next = new;
+	}
 }
 /*
 int	main(void) // main di merda.
