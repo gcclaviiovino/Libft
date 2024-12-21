@@ -28,6 +28,8 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 		len = len_str;
 	if (len == 0 || start >= len_str)
 		len = 0;
+	else if (start + len > len_str)
+		len = len_str - start;
 	sub = (char *) malloc(sizeof(char) * (len + 1));
 	if (!sub)
 		return (NULL);

@@ -11,33 +11,15 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <string.h>
-
-/*
-void    del(void *content) // solo per provare DA LEVARE!!
-{
-    free(content);
-}*/
-
-/*
-void    print_list(t_list *lst) // solo per stampare DA LEVARE!!
-{
-    while (lst)
-    {
-        printf("%s -> ", (char *)lst->content);
-        lst = lst->next;
-    }
-    printf("NULL\n");
-}*/
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*to_del;
 	t_list	*next_n;
 
-	to_del = *lst;
 	if (!lst || !*lst || !del)
 		return ;
+	to_del = *lst;
 	while (to_del != NULL)
 	{
 		next_n = to_del->next;
