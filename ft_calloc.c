@@ -11,12 +11,15 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdint.h>
 
 void	*ft_calloc(size_t nelem, size_t elsize)
 {
 	void	*mem;
 
-	mem = (void *) malloc(sizeof(elsize) * nelem);
+	if (nelem != 0 && elsize > (SIZE_MAX / nelem))
+		return (NULL);
+	mem = (void *) malloc(elsize * nelem);
 	if (!mem)
 		return (NULL);
 	ft_bzero(mem, nelem);
