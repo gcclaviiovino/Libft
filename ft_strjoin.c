@@ -28,10 +28,7 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	if (!superstr)
 		return (NULL);
 	while (s1[++i] != '\0')
-	{
-		printf("%d\n", i);
 		superstr[i] = s1[i];
-	}
 	i = 0;
 	while (s2[i] != '\0')
 	{
@@ -41,7 +38,7 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	superstr[l_1 + i] = '\0';
 	return (superstr);
 }
-int	main(void)
-{
-	ft_strjoin("hey", "lol");
-}
+// int	main(void)
+// {
+// 	ft_strjoin("hey", "lol");
+// }
