@@ -27,13 +27,13 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	if (len > len_str)
 		len = len_str;
 	sub = (char *) malloc(sizeof(char) * (len + 1));
+	if (!sub)
+		return (NULL);
 	if (len == 0 || start >= len_str)
 	{
 		sub[0] = '\0';
 		return (sub);
 	}
-	if (!sub)
-		return (NULL);
 	while (++i < len && s[i] != '\0')
 		sub[i] = s[i_st + i];
 	sub[i] = '\0';
