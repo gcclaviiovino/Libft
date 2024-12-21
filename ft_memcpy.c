@@ -33,9 +33,9 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-int	main(void)
-{
-	char dest[100];
-	ft_memset(dest, 'A', 100);
-	printf("str copiata: %s\n", (char *)ft_memcpy(dest , "cocou", 0));
-}
+// int	main(void)
+// {
+// 	char dest[100];
+// 	ft_memset(dest, 'A', 100);
+// 	printf("str copiata: %s\n", (char *)ft_memcpy(dest , "cocou", 0));
+// }
