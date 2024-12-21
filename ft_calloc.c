@@ -22,6 +22,6 @@ void	*ft_calloc(size_t nelem, size_t elsize)
 	mem = (void *) malloc(elsize * nelem);
 	if (!mem)
 		return (NULL);
-	ft_bzero(mem, nelem);
+	ft_bzero(mem, (elsize * nelem));
 	return (mem);
 }
