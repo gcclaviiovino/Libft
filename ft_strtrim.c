@@ -46,9 +46,9 @@ char	*ft_strtrim(const char *s1, const char *set)
 	int		size;
 
 	i_s = 0;
-	i_e = ft_strlen(s1) - 1;
 	if (!s1 || !set)
 		return (NULL);
+	i_e = ft_strlen(s1) - 1;
 	while (s1[i_s] != '\0' && in_set(s1[i_s], set) == 1)
 	{
 		i_s ++;

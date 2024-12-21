@@ -36,7 +36,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	t_list	*next_n;
 
 	to_del = *lst;
-	if (!lst || !del)
+	if (!lst || !*lst || !del)
 		return ;
 	while (to_del != NULL)
 	{

@@ -3,119 +3,117 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: liovino <liovino@student.42.it>            +#+  +:+       +#+        */
+/*   By: liovino <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/14 15:17:33 by liovino           #+#    #+#             */
-/*   Updated: 2024/12/15 19:29:31 by liovino          ###   ########.fr       */
+/*   Created: 2024/12/21 17:26:07 by liovino           #+#    #+#             */
+/*   Updated: 2024/12/21 17:26:13 by liovino          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+// #include <stdlib.h>
 
-// static void	free_str(char **matrix, int w_count)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (i < w_count)
-// 	{
-// 		free(matrix[i]);
-// 		i ++;
-// 	}
-// }
-static int	w_count(const char *str, char c)
+static void	free_str(char **matrix, int used)
 {
-	int		count;
-	bool	in_w;
-	int		i;
+	int	i;
+
+	i = 0;
+	while (i < used)
+	{
+		free(matrix[i]);
+		i++;
+	}
+	free(matrix);
+}
+
+static int	ft_wcount(const char *str, char c)
+{
+	int	count;
+	int	in_word;
+	int	i;
 
 	count = 0;
-	in_w = 0;
+	in_word = 0;
 	i = 0;
-	while (str[i] != '\0')
+	while (str[i])
 	{
-		if (str[i] != c && !in_w)
+		if (str[i] != c && in_word == 0)
 		{
-			in_w = 1;
-			count ++;
+			in_word = 1;
+			count++;
 		}
 		else if (str[i] == c)
-			in_w = 0;
-		i ++;
+			in_word = 0;
+		i++;
 	}
 	return (count);
 }
 
-static int	sub_len(const char *str, char c)
+static int	ft_sub_len(const char *s, char c)
 {
 	int	len;
 
 	len = 0;
-	while (str[len] != '\0' && str[len] != c)
-	{
-		len ++;
-	}
+	while (s[len] && s[len] != c)
+		len++;
 	return (len);
 }
 
-static char	*fill(const char *src, int i, int len)
+static char	**fill_matrix(const char *s, char c, char **out, int words)
 {
-	char	*dest;
-	int		i_sub;
+	int	i_sub;
+	int	i_matrix;
+	int	sub_len_var;
 
 	i_sub = 0;
-	dest = (char *) malloc(sizeof(char) * (len + 1));
-	if (!dest)
-		return (NULL);
-	while (i_sub < len)
+	i_matrix = 0;
+	while (s[i_sub] && i_matrix < words)
 	{
-		dest[i_sub] = src[i];
-		i ++;
-		i_sub ++;
+		while (s[i_sub] && s[i_sub] == c)
+			i_sub++;
+		if (s[i_sub])
+		{
+			sub_len_var = ft_sub_len(&s[i_sub], c);
+			out[i_matrix] = ft_substr(s, i_sub, sub_len_var);
+			if (!out[i_matrix])
+			{
+				free_str(out, i_matrix);
+				return (NULL);
+			}
+			i_sub += sub_len_var;
+			i_matrix++;
+		}
 	}
-	dest[i_sub] = '\0';
-	return (dest);
+	out[i_matrix] = NULL;
+	return (out);
 }
 
 char	**ft_split(const char *s, char c)
 {
-	int		len;
-	int		i;
 	char	**superstr;
-	int		row;
+	int		words;
 
-	i = 0;
-	row = 0;
-	superstr = (char **) malloc(sizeof(char *) * (w_count(s, c) + 1));
+	if (!s)
+		return (NULL);
+	words = ft_wcount(s, c);
+	superstr = (char **)malloc(sizeof(char *) * (words + 1));
 	if (!superstr)
 		return (NULL);
-	while (s[i] != '\0')
-	{
-		len = sub_len(&s[i], c);
-		if (s[i] != c)
-		{
-			superstr[row] = fill(s, i, len);
-			i ++;
-			s += len;
-		}
-		else
-			i ++;
-		row ++;
-	}
-	superstr[row] = NULL;
+	if (!fill_matrix(s, c, superstr, words))
+		return (NULL);
 	return (superstr);
 }
 
-int	main(void)
-{
-	// char	*str = "bella raga come va";
-	char	**split;
-	// char	c = ' ';
+// int	main(void)
+// {
+// 	// char	*str = "bella raga come va";
+// 	char	**split;
+// 	// char	c = ' ';
 
-	split = ft_split("          ", ' ');
-	printf("%s\n", split[0]);
-	printf("%s\n", split[1]);
-	printf("%s\n", split[2]);
-	printf("%s\n", split[3]);
-}
+// 	split = ft_split("loll ciao", ' ');
+// 	printf("%s\n", split[0]);
+// 	printf("%s\n", split[1]);
+// 	// printf("%s\n", split[2]);
+// 	// printf("%s\n", split[3]);
+// 	// printf("%s\n", split[4]);
+// }

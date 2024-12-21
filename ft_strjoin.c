@@ -19,16 +19,18 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	int		l_2;
 	char	*superstr;
 
-	i = 0;
+	i = -1;
+	if (!s1 || !s2)
+		return (NULL);
 	l_1 = ft_strlen(s1);
 	l_2 = ft_strlen(s2);
 	superstr = (char *) malloc(sizeof(char) * ((l_1 + l_2) + 1));
 	if (!superstr)
 		return (NULL);
-	while (s1[i] != '\0')
+	while (s1[++i] != '\0')
 	{
+		printf("%d\n", i);
 		superstr[i] = s1[i];
-		i ++;
 	}
 	i = 0;
 	while (s2[i] != '\0')
@@ -38,4 +40,8 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	}
 	superstr[l_1 + i] = '\0';
 	return (superstr);
+}
+int	main(void)
+{
+	ft_strjoin("hey", "lol");
 }
