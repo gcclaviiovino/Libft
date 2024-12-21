@@ -20,7 +20,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 	i = 0;
 	if (!dest || !src)
-		return (NULL);
+		return (dest);
 	ds = (unsigned char *)dest;
 	sr = (const unsigned char *)src;
 	if (dest != src)
@@ -32,4 +32,10 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		}
 	}
 	return (dest);
+}
+int	main(void)
+{
+	char dest[100];
+	ft_memset(dest, 'A', 100);
+	printf("str copiata: %s\n", (char *)ft_memcpy(dest , "cocou", 0));
 }
